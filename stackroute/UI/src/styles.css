@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html ,body {height: 100%; width: 100vw ;  overflow-x:hidden;
+     overflow-y:scroll;
+}
+
+.mat-form-field-appearance-outline ,.mat-form-field-outline {
+    color: red;
+ }
+
+
+@media(max-width:575px){
+    .mat-button {
+        font-size: 0.8em !important;
+   }
+ 
+   .example-card {
+    
+    width: 62vw!important;
+   }
+ 
+ .image {
+    
+     width: 25vw!important;
+   
+    }   
+    
+    .mat-card {
+     
+       height: 60vh !important;
+       width: 50vw  !important;
+       margin-bottom: 11vh !important;
+   }
+   
+   .mat-card-subtitle {
+   
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+ }
+ .mat-form-field-flex {
+ 
+    width: 100vw !important;
+ }
+ 
+ .mat-toolbar-row, .mat-toolbar-single-row {
+    width: 90VW !important;
+ }
+ 
+ .mat-form-field.field{
+    padding-left: 12vh !important;
+ }
+ 
+ 
+ 
+ }
+ 
+ @media(min-width:576px) and (max-width: 768px) {
+    
+ }
+ 

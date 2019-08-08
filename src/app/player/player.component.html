@@ -1,0 +1,68 @@
+<div class="body">
+  <form [formGroup]="formPlayerGroup">
+    <div class="row mt-3">
+      <div class="col-2 text-right mt-2">
+        <label for="name">Name</label>
+      </div>
+
+      <div class="col-2  mt-2">
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+
+        <div *ngIf="name.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="name.errors.forbiddenName">
+          Name cannot be Bob.
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-2 text-right mt-2">
+        <label for="email">email</label>
+      </div>
+
+      <div class="col-2  mt-2">
+        <input type="text" class="form-control" formControlName="email">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-2 text-right mt-2">
+        <label for="score">SCore</label>
+      </div>
+      <div class="col-2  mt-2">
+        <input type="text" class="form-control" formControlName="score">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-2 text-right mt-2">
+        <label for="playerId">Player Id</label>
+      </div>
+      <div class="col-2  mt-2">
+        <input type="text" class="form-control" formControlName="playerId">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-2 text-center">
+        <button type="Save" [disabled]="!ngForm.valid" class="btn btn-primary w-50"
+          (click)="saveplayer(formPlayerGroup.value)">Save</button>
+      </div>
+      <div class="col-2 text-center">
+        <button type="Search" class="btn btn-primary w-50" (click)="seachPlayers(formPlayerGroup.value)">Search</button>
+      </div>
+    </div>
+
+    <div id="snackbar">Save Sucessfully</div>
+    <div id="snackbar1">Save Failed</div>
+  </form>
+
+</div>

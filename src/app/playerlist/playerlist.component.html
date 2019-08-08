@@ -1,0 +1,20 @@
+<div class="body">
+  <div *ngIf="players" class="table-responsive mt-3 mr-5 position-absolute">
+
+    <table class="table table-sm table-bordered table-hover text-center">
+      <thead class="thead-light">
+        <th>Name</th>
+        <th>Email</th>
+        <th>PlayerId</th>
+        <th>Scote</th>
+
+      </thead>
+      <tr *ngFor="let player of players;let i=index">
+        <td>{{player?.name}}</td>
+        <td>{{player?.email}}</td>
+        <td><a [attr.href]="player.cricplayerid">{{player?.cricplayerid}}</a></td>
+        <td>{{player?.score}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

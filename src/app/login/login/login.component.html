@@ -1,0 +1,28 @@
+<div class="body">
+    <form (ngSubmit)="searchAccountsAndDisplayThem(accountSearchForm.value)">
+        <table class="table-sm mt-3">
+            <div style="border: 1px solid" class="px-3 pb-5 pt-3">
+                <tr>
+                    <td class="text-right"><label>Account #:</label></td>
+                    <td><input type="text" formControlName="accountId" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label>Account Name:</label></td>
+                    <td><input type="text" formControlName="accountName" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><label>Acct Executive Name:</label></td>
+                    <td>
+                        <select formControlName="accountExecutiveName" class="form-control">
+                            <option [disabled]="isdisabled">Exec Id | Executive Name(Region,Territory)</option>
+                            <option *ngFor="let allAcctExec of all_execs" [value]='allAcctExec?.exec_id'>
+                                <div [innerHTML]="allAcctExec?.combinedVal"></div>
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+            </div>
+        </table>
+    </form>
+
+</div>
